@@ -79,17 +79,17 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             
-            "browserTarget": "testap:build",
-            // "proxyConfig": "src/proxy.conf.json"
+            "browserTarget": "testap:build"
+        
           },
           "configurations": {
             "production": {
-              "browserTarget": "testap:build:production",
-              // "proxyConfig": "src/proxy.conf.json"
+              "browserTarget": "testap:build:production"
+             
             },
             "development": {
-              "browserTarget": "testap:build:development",
-              // "proxyConfig": "src/proxy.conf.json"
+              "browserTarget": "testap:build:development"
+             
             }
           },
           "defaultConfiguration": "development"
