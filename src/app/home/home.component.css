@@ -1,0 +1,29 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+label {
+    margin: auto;
+}
+
+.text-truncate-container  {
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.text-truncate-containerTitle {
+    width: 250px;
+}
+.text-truncate-containerTitle  {
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.1;;
+   
+}
+
+/* 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+*/

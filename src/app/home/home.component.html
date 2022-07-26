@@ -1,0 +1,109 @@
+
+<div class="container mt-5">
+    <div  class="row align-middle mT" style="background-color:#f5f3f3;; padding-top: 10px; padding-bottom: 10px;right: 10px; padding-left: 0px;padding-right: 0px;">
+          <div class="rounded    mx-auto col-6 input-group mt-3 mb-3 " style="background-color: #d9d4d4; padding-left: 0px;padding-right: 0px;">
+         
+              <input  class="form-control" #searchinput (input)="searchinput.value !='' ?searchBookWaitting(searchinput.value!,0,5):searchData.length =0 " placeholder="Search" style="border: none;outline: none;border-width: 0px;outline-style: none;box-shadow: none; margin-right: 5PX;"/>
+             
+              <div class="input-group-append">
+                <i class="bi bi-search float-right mr-2" style="margin: auto;"></i>
+              </div>
+              
+          </div>
+    </div> 
+    <div class="row pa"  >
+      <div class="row mx-auto  input-group mb-3 padding" style="padding: 0px;"  >
+        <div  class="container " style="padding: 0px;">
+
+          <div class="row" style="padding-left: 8px;padding-right: 8px;"  >
+            <div class="col-12 col-md-6 " *ngFor="let value of searchData ; let i = index" style="padding: 0px;margin: 0px;padding-right: 0px;">
+              <div  class="row rounded border-primary  align-middle mt-2 ml-4 " style="padding-right: 0px;" (click)="viewClick(value)" [routerLink]="['bookdetails']">
+                 
+                 
+              
+                <div class="col-4 col-md-3 row rounded  " style="background-color: #f3f3f3;">
+  
+                  <!-- {{checkImageUrl(value.volumeInfo)}} -->
+                  <img class="mt-4 mb-5" src="{{value.volumeInfo.imageLinks !=null ? value.volumeInfo.imageLinks.smallThumbnail :'' }} " style="height: 130px;width:130px ;"  />
+                </div>
+  
+             
+  
+                <div class="col-8 col-md-9   ml-2 rounded pt-2" style="background-color: #f3f3f3; padding-right: 0px;">
+                
+                  <div style="height: 40px; ">
+                    <label  class="col mt-3 text-break text-truncate-containerTitle " style="margin-left: 0px; font-weight: var(--highwithfont);font-size: var(--bookTilteFontSize); ">
+                      {{value.volumeInfo.title}}
+                     </label>
+                  </div>
+                
+                
+                
+
+                   <app-rating-star  
+                   [bookDetails]="value.volumeInfo"
+                   >
+
+                   </app-rating-star>
+
+                   <label  class="col mt-2 text-truncate " style="font-weight: var(--smallFontWeight);font-size: var(--smallFont); ">
+                   
+                    {{value.volumeInfo.authors}} {{value.volumeInfo.publishedDate}} 
+                   </label>
+                   
+                   
+                  <div style="height: 40px;margin-bottom: 20px;">
+                    <label  class="col text-truncate-container " style="
+ 
+                    ">
+                     {{value.volumeInfo.description}}
+                    </label>
+
+                  </div>
+
+              
+                  
+            
+                </div>
+  
+  
+         
+             
+              
+          </div>
+          
+            </div>
+            
+          </div>
+              
+       
+            
+        </div>
+             
+  
+    </div>
+    <!-- <mat-paginator 
+    [length]="100"
+    [pageSizeOptions]="[5, 10, 15, 20]"
+
+    [pageSize]="5"
+    (page)="apiCall(pageEvent.pageIndex,pageEvent.pageSize)"
+    aria-label="Select page"
+    
+    ></mat-paginator> -->
+
+    <div class="mx-auto">
+      <mat-paginator  *ngIf="searchData.length" #paginator [length]="getItemLength" [pageSize]="5" [pageSizeOptions]="[5, 10, 15,20]"
+      (page)="apiCall(paginator.pageIndex!,paginator.pageSize!)"
+      >
+      </mat-paginator>
+  
+    </div>
+
+<div>
+
+</div>
+  </div>
+  
+  
+  

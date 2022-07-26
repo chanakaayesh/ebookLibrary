@@ -1,0 +1,46 @@
+
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+label{
+    margin: auto;
+}
+
+.bookDitailsSingleDive{
+    margin-top:var(--labelMargTop);
+    background-color:var(--book-label-color);
+    margin-left:var(--labelMargTop);
+    margin-right: var(--labelMargTop);
+}
+.bookDitailsSingleDive1{
+    margin-top:var(--labelMargTop);
+    
+    margin-left:var(--labelMargTop);
+    margin-right: var(--labelMargTop);
+}
+
+
+.bookDitailsRating{
+    margin-top:var(--labelMargTop);
+    
+    margin-left:var(--labelMargTop);
+    margin-right: var(--labelMargTop);
+    color: #ffd814;
+}
+
+.maidDiv{
+    margin-top:var(--labelMargTop);
+    margin-bottom: var(--labelMargTop);
+    margin-left: var(--labelMargTop);
+    margin-right: var(--labelMargTop);
+}
+
+div{
+    font-family: var(--fontFamily);
+}
+.titleLable{
+    font-weight: var(--highwithfont);
+}
+
+.setvalueLable{
+    font-weight: var(--lightwidthfont);
+ 
+}

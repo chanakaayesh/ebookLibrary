@@ -1,0 +1,9 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+.bookDitailsRating{
+    margin-top:30px;
+    
+    margin-left:15px;
+    margin-right: var(--labelMargTop);
+    color: #ffd814;
+}

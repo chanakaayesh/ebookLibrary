@@ -1,0 +1,17 @@
+
+<div class="row bookDitailsRating
+">
+
+<div *ngFor="let rating of checkrating('given')">
+    <i class="bi bi-star-fill"></i>
+</div>
+<div  *ngFor="let rating of checkrating('no')">
+    <i class="bi bi-star" ></i>
+</div>
+<div>
+    <label class="ml-1" style="font-weight: var(--smallFontWeight);font-size: var(--smallFont);color:black ;"> {{bookDetails.averageRating !=null ? bookDetails.averageRating: ""}}</label>
+    <label class="ml-1" style="font-weight: var(--smallFontWeight);font-size: var(--smallFont);color:black ;"> ratings</label>
+</div>
+
+
+</div>

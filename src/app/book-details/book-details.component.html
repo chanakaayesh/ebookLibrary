@@ -1,0 +1,256 @@
+
+<button hidden style="   background-color: #3030d3;
+border:none;outline: none; margin-left: 100px"><i class="bi bi-arrow-left"></i></button>
+<div class="container">
+
+    <div class="col mt-5 " style="background-color: rgb(248 248 248);">
+
+        <!-- row1 -->
+
+            <div class="row" style="">
+                
+             
+               <diV class="col-12  col-md mb-2 mt-3 " style="padding: 0px; padding-right: 10px;height: 400px; padding-bottom: 5px;">
+                    <img class="col-md mb-4 mt-2 rounded" src="{{this.getBookDetails.imageLinks  !=null ? this.getBookDetails.imageLinks.thumbnail:''}} "  style="height: 380px;"/>
+               </diV>
+                  <!-- VolumeInfo  -->
+                <div class="col-12 col-md " style="">
+                    <div class="col   mt-2 mb-2 " style="padding: 0px; padding-right: 10px;padding-left: 0px;">
+                        <!-- {{this.getBookDetails.title}} -->
+                        <label class="col" style="color: #030303;font-size: 30px;;margin-right: 5px;line-height: normal ;padding-left: 2px;" > {{this.getBookDetails.title}} </label>
+                    </div>
+                    <app-rating-star  
+                    [bookDetails]="this.getBookDetails"
+                    >
+ 
+                    </app-rating-star>
+                    
+                    <!-- <div class="rounded row bookDitailsSingleDive" >
+                        <label class="col titleLable" >Title</label>
+                        <label class="col setvalueLable">{{this.getBookDetails.title}}</label>
+                    </div> -->
+                    
+                    <div class="rounded row bookDitailsSingleDive" >
+                        <label class="col titleLable" >Authors</label>
+                        <label class="col setvalueLable">{{this.getBookDetails.authors !=null ? this.getBookDetails.authors :empatyValuesChecker("Author")}}</label>
+                    </div>
+
+                    
+                <div class="rounded row bookDitailsSingleDive1" >
+                    <label class="col  titleLable" >Publisher</label>
+                    <label class="col setvalueLable">{{this.getBookDetails.publisher !=null ?this.getBookDetails.publisher:empatyValuesChecker("Publisher")}}</label>
+                </div>
+
+                    <div class="rounded row bookDitailsSingleDive" >
+                        <label class="col titleLable" >Published date</label>
+                        <label class="col setvalueLable">{{this.getBookDetails.publishedDate !=null ?this.getBookDetails.publishedDate:empatyValuesChecker("Published")}}</label>
+                    </div>
+                    <div class="rounded row bookDitailsSingleDive1" >
+                        <label class="col titleLable" >ISBN_10</label>
+                        <label class="col setvalueLable">{{getAllIndustryIdentifier(this.getBookDetails.industryIdentifiers,10)}}</label>
+                    </div>
+
+                    <div class="rounded row bookDitailsSingleDive" >
+                        <label class="col titleLable" >ISBN_13</label>
+                        <label class="col setvalueLable">{{getAllIndustryIdentifier(this.getBookDetails.industryIdentifiers,13)}}</label>
+                    </div>
+                    <div class="rounded row bookDitailsSingleDive1" >
+                        <label class="col titleLable" >Reading image</label>
+                        <label class="col setvalueLable">{{checkboolinValue(this.getBookDetails.readingModes.text)}}</label>
+                    </div>
+
+                    <div class="rounded row bookDitailsSingleDive" >
+                        <label class="col titleLable" >Reading text</label>
+                        <label class="col setvalueLable">{{checkboolinValue(this.getBookDetails.readingModes.image)}}</label>
+                    </div>
+                    <div class="rounded row bookDitailsSingleDive1" >
+                        <label class="col titleLable" >Number of page</label>
+                        <label class="col setvalueLable">{{this.getBookDetails.pageCount !=null ?this.getBookDetails.pageCount :empatyValuesChecker("Page")}}</label>
+                    </div>
+
+                    <div class="rounded row bookDitailsSingleDive" >
+                        <label class="col titleLable" >Print type</label>
+                        <label class="col setvalueLable">{{this.getBookDetails.printType !=null ? this.getBookDetails.printType:empatyValuesChecker("Print")}}</label>
+                    </div>
+
+                    <div class="rounded row bookDitailsSingleDive1" >
+                        <label class="col titleLable" >Maturity rating</label>
+                        <label class="col setvalueLable">{{this.getBookDetails.maturityRating !=null ?this.getBookDetails.maturityRating:empatyValuesChecker("Rating")}}</label>
+                    </div>
+
+                    <div class="rounded row bookDitailsSingleDive" >
+                        <label class="col titleLable" >Allow Anon Logging</label>
+                        <label  class="col setvalueLable" >{{checkboolinValue(this.getBookDetails.allowAnonLogging)}}</label>
+                    </div>
+
+                    <div class="rounded row bookDitailsSingleDive1" >
+                        <label class="col titleLable" >Content version</label>
+                        <label class="col setvalueLable">{{this.getBookDetails.contentVersion !=null ?this.getBookDetails.contentVersion:empatyValuesChecker("Content version")}}</label>
+                    </div>
+
+        
+                     
+                    <div class="rounded row bookDitailsSingleDive" >
+                        <label class="col titleLable" >Preview link</label>
+                        <!-- {{this.getBookDetails.publishedDate}} -->
+                        <a class="col setvalueLable" href="{{this.getBookDetails.previewLink}}" target="_blank">previewLink</a>
+            
+                    </div>
+
+                    <div class="rounded row bookDitailsSingleDive1" >
+                        <label class="col titleLable" >Language</label>
+                        <label class="col setvalueLable">{{this.getBookDetails.language !=null ?this.getBookDetails.language:empatyValuesChecker("Language")}}</label>
+                    </div>
+                    <div class="rounded row bookDitailsSingleDive" >
+                        <label class="col titleLable" >Infomation link</label>
+                        <!-- {{this.getBookDetails.publishedDate}} -->
+                       
+                        <a class="col setvalueLable" href="{{this.getBookDetails.infoLink}}" target="_blank">infoLink</a>
+                    </div>
+
+                       
+           
+                  
+
+
+
+                </div>
+              
+            </div>
+           
+
+
+     
+            <div class="col mt-5 "  style="padding: 0px;">
+                <div class="rounded row bookDitailsSingleDive" >
+                    
+                    <label class="col col-md-3 titleLable" >canonicalVolumeLink</label>
+                    <label class="col col-md-9 setvalueLable" style="display: inline-block;overflow: auto;">{{this.getBookDetails.canonicalVolumeLink !=null ?this.getBookDetails.canonicalVolumeLink:empatyValuesChecker("canonicalVolumeLink")}}</label>
+                </div>
+
+           
+    
+    
+                <div class="rounded row bookDitailsSingleDive1" >
+                    <label class="col col-md-3 titleLable" >Description</label>
+                    <label class="col col-md-9 setvalueLable">{{this.getBookDetails.description !=null ?this.getBookDetails.description :empatyValuesChecker("Description")}}</label>
+                </div>
+    
+                <div class="rounded row bookDitailsSingleDive" >
+                    <label class="col col-md-3 titleLable" >Categories</label>
+                    <label class="col col-md-9 setvalueLable">{{this.getBookDetails.categories !=null ? this.getBookDetails.categories:empatyValuesChecker("Categories")}}</label>
+                </div>
+      
+                <div class="rounded row bookDitailsSingleDive1" >
+                    <label class="col col-md-3 titleLable" >Panelization summary</label>
+                    <label class="col col-md-9 setvalueLable">{{this.getBookDetails.panelizationSummary !=null ? checkboolinValue(this.getBookDetails.panelizationSummary.containsEpubBubbles) :empatyValuesChecker("Panelization summary")}}</label>
+                </div>
+
+
+
+                <!-- AccessInfo -->
+
+                                <div class="col   mt-2 mb-2 " style="padding: 0px; padding-right: 10px;">
+                                    <label class="col rounded" style="background-color:#b8b8be;;color: #ffffff; font-size: 17px;margin-left: 5px;margin-right: 5px;" >Access</label>
+                                </div>
+                                <div class="rounded row bookDitailsSingleDive" >
+                                    <label class="col col-md-3  titleLable" >Country</label>
+                                    <label class="col col-md-9 setvalueLable">{{this.getItem.accessInfo.country !=null ? this.getItem.accessInfo.country:empatyValuesChecker("Country")}}</label>
+                                </div>
+
+                                <div class="rounded row bookDitailsSingleDive1" >
+                                    <label class="col col-md-3 titleLable" >Viewability</label>
+                                    <label class="col col-md-9 setvalueLable">{{this.getItem.accessInfo.viewability !=null ?this.getItem.accessInfo.viewability:empatyValuesChecker("Viewability")}}</label>
+                                </div>
+
+                                
+                                <div class="rounded row bookDitailsSingleDive" >
+                                    <label class="col col-md-3 titleLable" >Embeddable</label>
+                                    <label class="col col-md-9 setvalueLable">{{checkboolinValue(this.getItem.accessInfo.embeddable)}}</label>
+                                </div>
+
+                                <div class="rounded row bookDitailsSingleDive1" >
+                                    <label class="col col-md-3 titleLable" >Public domain</label>
+                                    <label class="col col-md-9 setvalueLable">{{checkboolinValue(this.getItem.accessInfo.publicDomain)}}</label>
+                                </div>
+
+                                <div class="rounded row bookDitailsSingleDive" >
+                                    <label class="col col-md-3 titleLable" >Text to speech permission</label>
+                                    <label class="col col-md-9 setvalueLable">{{this.getItem.accessInfo.textToSpeechPermission !=null ? this.getItem.accessInfo.textToSpeechPermission:empatyValuesChecker("Text to speech permission")}}</label>
+                                </div>
+
+                            
+                                
+                                <div class="rounded row bookDitailsSingleDive1" >
+                                    <label class="col col-md-3 titleLable" >Web reader link</label>
+                                    <a class="col setvalueLable" href="{{this.getItem.accessInfo.webReaderLink }}">webReaderLink</a>
+                    
+                                </div>
+
+                                <div class="rounded row bookDitailsSingleDive" >
+                                    <label class="col col-md-3 titleLable" >Access view status</label>
+                                    <label class="col col-md-9 setvalueLable">{{this.getItem.accessInfo.accessViewStatus !=null ?this.getItem.accessInfo.accessViewStatus:empatyValuesChecker("Access view status")}}</label>
+                                </div>
+                                <div class="rounded row bookDitailsSingleDive1" >
+                                    <label class="col col-md-3 titleLable" >Quote sharing allowed</label>
+                                    <label class="col col-md-9 setvalueLable">{{checkboolinValue(this.getItem.accessInfo.quoteSharingAllowed)}}</label>
+                                </div>
+
+                
+
+             
+
+             <!-- SaleInfo -->
+
+                            <div class="col rounded  mt-2 mb-2 " style="padding: 0px; padding-right: 10px;">
+                                <label class="col rounded bookDitailsSingleDive" style="background-color: #b8b8be;;color: #ffffff; font-size: 17px;margin-left: 5px;margin-right: 5px;" >Sale</label>
+                            </div>
+                            <div class="rounded row bookDitailsSingleDive" >
+                                <label class="col col-md-3   titleLable" >Country</label>
+                                <label class="col col-md-9 setvalueLable">{{this.getItem.saleInfo.country !=null ?this.getItem.saleInfo.country:empatyValuesChecker("Country")}}</label>
+                            </div>
+
+                            <div class="rounded row bookDitailsSingleDive1 ">
+                                <label class="col col-md-3   titleLable" >Saleability</label>
+                                <label class="col col-md-9 setvalueLable">{{this.getItem.saleInfo.saleability !=null ?this.getItem.saleInfo.saleability:empatyValuesChecker("Saleability")}}</label>
+                            </div>
+
+                            <div class="rounded row bookDitailsSingleDive" >
+                                <label class="col col-md-3   titleLable" >E-book</label>
+                                <label class="col col-md-9 setvalueLable">{{checkboolinValue(this.getItem.saleInfo.isEbook)}}</label>
+                            </div>
+
+                            <div class="rounded row bookDitailsSingleDive1" >
+                                <label class="col col-md-3   titleLable" >Price</label>
+                                <label class="col col-md-9 setvalueLable">{{null != this.getItem.saleInfo.listPrice ? this.getItem.saleInfo.listPrice.currencyCode : "" }} {{this.getItem.saleInfo.listPrice !=null ? this.getItem.saleInfo.listPrice.amount : empatyValuesChecker("Price")}}</label>
+                            </div>
+
+                            <div class="rounded row bookDitailsSingleDive" >
+                                <label class="col col-md-3   titleLable" >Retail price</label>
+                                <label class="col col-md-9 setvalueLable">{{this.getItem.saleInfo.retailPrice !=null ? this.getItem.saleInfo.retailPrice!.currencyCode:" "}} {{ this.getItem.saleInfo.retailPrice !=null ? this.getItem.saleInfo.retailPrice!.amount :empatyValuesChecker("Price")}}</label>
+                            </div>
+
+
+                            <div class="rounded row bookDitailsSingleDive1" >
+                                <label class="col col-md-3   titleLable" >Buy link</label>
+                                <a class="col col-md-9 setvalueLable" href="{{this.getItem.saleInfo.buyLink!}}">Link</a>
+                            </div>
+
+                            <div class="col rounded  mt-2 mb-2 " style="padding: 0px; padding-right: 10px;">
+                                <label class="col rounded" style="background-color: #b8b8be;;color: #ffffff; font-size: 17px;margin-left: 5px;margin-right: 5px;" >Search Information</label>
+                            </div>
+                            <div class="rounded row bookDitailsSingleDive " >
+                                <label class="col col-md-3 titleLable" >Text snippet</label>
+                                <label class="col col-md-9 setvalueLable">{{this.getItem.searchInfo !=null ?this.getItem.searchInfo.textSnippet :empatyValuesChecker("Text snippet")}}</label>
+                            </div>
+     
+
+                            <span class="col" style="height: 10pxx;"></span>
+         
+            </div>
+    
+
+     
+    </div>
+
+</div>
