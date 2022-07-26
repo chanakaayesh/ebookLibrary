@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  searUrl:`books/v1/volumes?q=`,
+  searUrl:`https://www.googleapis.com/books/v1/volumes?q=`,
 
 };
 

@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            
             "outputPath": "dist/testap",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -46,7 +47,7 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "5mb",
+                  "maximumWarning": "500kb",
                   "maximumError": "1mb"
                 },
                 {
@@ -79,16 +80,16 @@
           "options": {
             
             "browserTarget": "testap:build",
-            "proxyConfig": "src/proxy.conf.json"
+            // "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {
               "browserTarget": "testap:build:production",
-              "proxyConfig": "src/proxy.conf.json"
+              // "proxyConfig": "src/proxy.conf.json"
             },
             "development": {
               "browserTarget": "testap:build:development",
-              "proxyConfig": "src/proxy.conf.json"
+              // "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
